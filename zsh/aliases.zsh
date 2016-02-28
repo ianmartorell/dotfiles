@@ -59,6 +59,9 @@ if [ $MACVIM_INSTALLED -eq 0 ]; then
   alias vim="mvim -v"
 fi
 
+# sudoedit shortcut
+alias svim='sudoedit'
+
 # mimic vim functions
 alias :q='exit'
 
