@@ -4,3 +4,5 @@ set guioptions-=L
 
 " Disable the macvim toolbar
 set guioptions-=T
+
+set guifont=Source\ Code\ Pro\ Medium\ 10
