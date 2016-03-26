@@ -1,0 +1,45 @@
+! vim: set filetype=xdefaults :
+
+!Solarized + tangerine + random colours
+
+*pointerColorBackground : #586E75
+*pointerColorForeground : #93A1A1
+*cursorColor            : #93A1A1
+
+*background : #29303a
+*foreground : #CCCCCC
+
+*colorBD : #FFFFFF
+*colorUL : #CCCC66
+
+! black
+*color0  : #2E3436
+*color8  : #555753
+
+! red
+*color1  : #DC322F
+*color9  : #E84F4F
+
+! green
+*color2  : #27ae60
+*color10 : #2ecc71
+
+! yellow
+*color3  : #f39c12
+*color11 : #f1c40f
+
+! blue
+*color4  : #268BD2
+*color12 : #6699FF
+
+! magenta
+*color5  : #9933CC
+*color13 : #CC66FF
+
+! cyan
+*color6  : #33CC99
+*color14 : #93A1A1
+
+! white
+*color7  : #EEE8D5
+*color15 : #FDF6E3

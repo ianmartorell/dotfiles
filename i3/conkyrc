@@ -1,0 +1,65 @@
+background no
+out_to_console yes
+out_to_x no
+max_text_width 0
+own_window no
+update_interval 0.5
+total_run_times 0
+short_units yes
+if_up_strictness address
+use_spacer right
+override_utf8_locale no
+cpu_avg_samples 2
+
+TEXT
+,[
+# Pacman
+{"full_text":" ","color":"\#ffffff","separator":false,"separator_block_width":6},\
+{"full_text":"[${execi 200 checkupdates | wc -l}]","color":"\#ffffff","separator":false,"separator_block_width":6},\
+
+# AUR
+{"full_text":" ","color":"\#ffffff","separator":false,"separator_block_width":6},\
+{"full_text":"[${execi 1900 cower -u | wc -l}]","color":"\#ffffff","separator":false,"separator_block_width":6},\
+
+# Kernel
+{"full_text":" ","color":"\#ffffff","separator":false,"separator_block_width":6},\
+{"full_text":"[${kernel}]","color":"\#ffffff","separator":false,"separator_block_width":6},\
+#{ "full_text": ": ${kernel}","color":"\#ffffff"},
+
+# Wifi
+# {"full_text":" ","color":"\#ffffff","separator":false,"separator_block_width":6},\
+# {"full_text":"[${upspeed wlp2s0}]","color":"\#ffffff","separator":false,"separator_block_width":6},\
+# {"full_text": ": [${upspeed wlp2s0}] ", "color":"\#ffffff", "separator": false, "separator_block_width":6},\
+
+# Volume
+{"full_text":" ","color":"\#ffffff","separator":false,"separator_block_width":6},\
+{"full_text":"${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6}","color":"\#ffffff","separator":false,"separator_block_width":6},\
+# {"full_text": ": ${exec amixer -c 0 get Master | grep Mono: | cut -d " " -f6} ", "color":"\#ffffff"},
+
+# Brightness
+# {"full_text":" ","color":"\#ffffff","separator":false,"separator_block_width":6},\
+# {"full_text":"[${exec xbacklight| awk '{printf("%d\n",$1 + 0.5)}'}%] ","color":"\#ffffff","separator":false,"separator_block_width":6},\
+# { "full_text": ": ${exec xbacklight| awk '{printf("%d\n",$1 + 0.5)}'}% ", "color":"\#ffffff"},
+
+# CPU
+{"full_text": " ❤","color": "\#ffffff","separator":false,"separator_block_width":6},
+{"full_text": "[$acpitemp°C] [$cpu%]","color": "\#ffffff","separator":false,"separator_block_width":6},
+# {"full_text":" ","color":"\#ffffff","separator":false,"separator_block_width":6},\
+# {"full_text":"[$cpu%]","color":"\#ffffff","separator":false,"separator_block_width":6},\
+# {"full_text": " :[$cpu%] ", "color":"\#ffffff", "separator": false, "separator_block_width":6},\
+
+# Battery
+# {"full_text":" ","color":"\#ffffff","separator":false,"separator_block_width":6},\
+# {"full_text":"[${battery_percent BAT1}%]","color":"\#ffffff","separator":false,"separator_block_width":6},\
+# {"full_text": ":[${battery_percent BAT1}%] ","color":"\#ffffff"},
+
+# Keyboard layout
+{"full_text": " ⌨ [${exec setxkbmap -v 7 | grep layout | awk '{print $2}'}]", "color": "\#ffffff","separator":false,"separator_block_width":6},
+
+# Calendar/time
+{"full_text":" ","color":"\#ffffff","separator":false,"separator_block_width":6},\
+{"full_text":"${time %a %b %d}","color":"\#ffffff","separator":false},\
+# {"full_text": " :${time %a %d %b} ${time %H:%M:%S} ","color": "\#ffffff", "separator": false},
+{"full_text":" ","color":"\#ffffff","separator":false,"separator_block_width":6},\
+{"full_text":"${time %H:%M:%S} ","color":"\#ffffff","separator":false}
+]

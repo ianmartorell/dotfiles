@@ -1,0 +1,5 @@
+[Settings]
+gtk-theme-name = Arc-Darker
+gtk-fallback-icon-theme = AwOkenDark
+gtk-application-prefer-dark-theme = 0
+gtk-font-name = System San Francisco Display 10

@@ -71,6 +71,9 @@ alias ve='vim ~/.vimrc'
 # zsh profile editing
 alias ze='vim ~/.zshrc'
 
+# i3 config editing
+alias ie='vim $yadr/i3/config'
+
 # Git Aliases
 alias gs='git status'
 alias gstsh='git stash'

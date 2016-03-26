@@ -33,6 +33,8 @@ task :install => [:submodule_init, :submodules] do
 
   run_bundle_config
 
+	install_i3 if RUBY_PLATFORM.downcase.include?("linux")
+
   success_msg("installed")
 end
 
@@ -352,6 +354,14 @@ def apply_theme_to_iterm_profile_idx(index, color_scheme_path)
 
   run %{ /usr/libexec/PlistBuddy -c "Merge '#{color_scheme_path}' :'New Bookmarks':#{index}" ~/Library/Preferences/com.googlecode.iterm2.plist }
   run %{ defaults read com.googlecode.iterm2 }
+end
+
+def install_i3
+	run %{ ln -sf $HOME/.yadr/xinitrc ~/.xinitrc }
+	run %{ ln -sf $HOME/.yadr/gtkrc-2.0 ~/.gtkrc-2.0 }
+	run %{ ln -sf $HOME/.yadr/gtk-3.0-settings ~/.config/gtk-3.0/settings.ini }
+	run %{ mkdir -p $HOME/.config/i3 }
+	run %{ ln -sf $HOME/.yadr/config ~/.config/i3/config }
 end
 
 def success_msg(action)

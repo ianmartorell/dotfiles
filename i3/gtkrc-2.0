@@ -1,0 +1,6 @@
+gtk-icon-theme-name = "AwOkenDark"
+gtk-theme-name = "Arc-Darker"
+gtk-font-name = "System San Francisco Display 10"
+
+style "vimfix" { bg[NORMAL] = "#333333" }
+widget "vim-main-window.*GtkForm" style "vimfix"
