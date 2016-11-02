@@ -1,46 +1,31 @@
 set $mod Mod1
 
-font pango:System San Francisco Display Thin 11
+font pango:Monospace 11
+# font pango:Adobe Source Code Pro 11
+# font pango:System San Francisco Display Thin 11
 # font pango:System San Francisco Display 10
 # font pango:Inconsolata-dz for Powerline 10
 # font pango:-misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1, Icons 9
 # font Liberation\ Mono 11px
 
-new_window pixel				3
-focus_follows_mouse			yes
-# force_focus_wrapping		no
-hide_edge_borders				both
+new_window pixel          3
+focus_follows_mouse       yes
+force_focus_wrapping      no
+hide_edge_borders         none
 
-set $gray1 #373d48
+set $white #ffffff
+set $black #000000
+set $gray1 #5e636c
 set $gray2 #29303a
+set $blue_highlight #285577
+set $red_alert
 
-client.focused            $gray1   $gray1   #FFFFFF   $gray1
-client.focused_inactive   $gray2   $gray2   #FFFFFF   #000000
-client.unfocused          $gray2   $gray2   #FFFFFF   #000000
-
-# set $base00 #101218
-# set $base01 #1f222d
-# set $base02 #252936
-# set $base03 #7780a1
-# set $base04 #C0C5CE
-# set $base05 #d1d4e0
-# set $base06 #C9CCDB
-# set $base07 #ffffff
-# set $base08 #ee829f
-# set $base09 #f99170
-# set $base0A #ffefcc
-# set $base0B #a5ffe1
-# set $base0C #97e0ff
-# set $base0D #97bbf7
-# set $base0E #c0b7f9
-# set $base0F #fcc09e
-# 
-# # Window Colors
-# #                       border  background text    indicator
-# client.focused          $base01 $base01    $base07 $base0F
-# client.focused_inactive $base02 $base02    $base03 $base0F
-# client.unfocused        $base02 $base02    $base03 $base0F
-# client.urgent           $base02 $base08    $base00 $base0F
+# class                   border   backgr.     text     indicator   child_border
+client.focused            $gray1   $gray1      $white   $white      $white
+client.focused_inactive   $gray2   $gray2      $white   $gray2      $gray2
+client.unfocused          $gray2   $gray2      $white   $gray2      $gray2
+client.urgent             $gray2   $red_alert  $white   $red_alert  $red_alert
+client.placeholder        $black   $gray1      $white   $gray1      $gray1
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -56,7 +41,7 @@ bindsym $mod+c kill
 # bindsym $mod+Shift+p exec "~/.bin/pass-autotype-dmenu"
 
 # start rofi
-bindsym $mod+p exec rofi -show run -fuzzy -location 0 -lines 3 -auto-select -eh 2 -width 100 -padding 430 -opacity "85" -bw 0 -bc "$gray1" -bg "$gray1" -fb "$#ffffff" -hlbg "$gray1" -hlfg "#9575cd" -font "System San Francisco Display 24"
+bindsym $mod+p exec rofi -show run -fuzzy -location 0 -lines 7 -eh 2 -width 100 -padding 600 -opacity "85" -bw 0 -bc "$gray1" -bg "$gray1" -fb "$#ffffff" -hlbg "$gray1" -hlfg "#9575cd" -font "System San Francisco Display 24"
 
 # screen lock
 bindsym Control+$mod+l exec slimlock
@@ -100,27 +85,27 @@ bindsym $mod+Shift+f floating toggle
 # switch to last workspace
 bindsym $mod+space workspace back_and_forth
 
-# set $workspace1 "1: Browser"
-# set $workspace2 "2: Terminals"
-# set $workspace3 "3: Editor"
-# set $workspace4 "4"
-# set $workspace5 "5"
-# set $workspace6 "6"
-# set $workspace7 "7"
-# set $workspace8 "8"
-# set $workspace9 "9"
-# set $workspace10 "10: Music"
+set $workspace1 " 1 "
+set $workspace2 " 2 "
+set $workspace3 " 3 "
+set $workspace4 " 4 "
+set $workspace5 " 5 "
+set $workspace6 " 6 "
+set $workspace7 " 7 "
+set $workspace8 " 8 "
+set $workspace9 " 9 "
+set $workspace10 " 10 "
 
-set $workspace1 "1: "
-set $workspace2 "2: "
-set $workspace3 "3: "
-set $workspace4 "4: "
-set $workspace5 "5: "
-set $workspace6 "6: "
-set $workspace7 "7: "
-set $workspace8 "8: "
-set $workspace9 "9: "
-set $workspace10 "10: "
+# set $workspace1 "1: "
+# set $workspace2 "2: "
+# set $workspace3 "3: "
+# set $workspace4 "4: "
+# set $workspace5 "5: "
+# set $workspace6 "6: "
+# set $workspace7 "7: "
+# set $workspace8 "8: "
+# set $workspace9 "9: "
+# set $workspace10 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -147,20 +132,21 @@ bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
 # assign workspaces to monitors
-workspace $workspace1 output DP-1
-workspace $workspace2 output HDMI-0
-workspace $workspace3 output DHDMI-0
-workspace $workspace10 output DP-1
+# workspace $workspace1 output DP-1
+# workspace $workspace2 output HDMI-0
+# workspace $workspace3 output DHDMI-0
+# workspace $workspace10 output DP-1
 
 # assign applications to workspaces
 # use `xprop` to get class name
-assign [class="google-chrome"] $workspace1
+# assign [class="google-chrome"] $workspace1
 # assign [class="URxvt"] $workspace2
-assign [class="Gvim"] $workspace3
-assign [class="Subl3"] $workspace3
-assign [class="Thunar"] $workspace4
-assign [class="Skype"] $workspace9
-assign [class="Rhythmbox"] $workspace10
+# assign [class="Gvim"] $workspace3
+# assign [class="Subl3"] $workspace3
+# assign [class="Atom"] $workspace3
+# assign [class="Thunar"] $workspace4
+# assign [class="Skype"] $workspace9
+# assign [class="Rhythmbox"] $workspace10
 
 # Floating
 for_window [class="Lxappearance"] floating enable
@@ -193,16 +179,16 @@ bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master '5%-'"
 bindsym XF86AudioMute exec "amixer -D pulse set Master toggle"
 bindsym XF86AudioMicMute exec "amixer -D pulse sset Capture toggle"
 
-# bindsym XF86AudioPlay exec playerctl play
-# bindsym XF86AudioPause exec playerctl pause
-# bindsym XF86AudioStop exec playerctl stop
-# bindsym XF86AudioNext exec playerctl next
-# bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
-bindsym XF86AudioPlay exec "~/.bin/player toggle"
-bindsym XF86AudioStop exec "~/.bin/player stop"
-bindsym XF86AudioNext exec "~/.bin/player next"
-bindsym XF86AudioPrev exec "~/.bin/player previous"
+# bindsym XF86AudioPlay exec "~/.bin/player toggle"
+# bindsym XF86AudioStop exec "~/.bin/player stop"
+# bindsym XF86AudioNext exec "~/.bin/player next"
+# bindsym XF86AudioPrev exec "~/.bin/player previous"
 
 # Laptop bindings
 # bindsym XF86KbdBrightnessDown exec "sudo /opt/kbdlight/bin/kbdlight -"
@@ -223,12 +209,13 @@ bindsym $ms+space exec "(setxkbmap -query | grep -q 'layout:\s\+us') && setxkbma
 
 bar {
         position top
-        status_command ~/.yadr/i3/bin/conky-wrapper
+        # status_command ~/.yadr/i3/bin/conky-wrapper
+				status_command i3status
         colors {
                 statusline #AAAAAA
                 background $gray2
-                focused_workspace $gray2 $gray2 #FFFFFF
-                inactive_workspace $gray1 $gray1 #AAAAAA
+                focused_workspace $gray1 $gray1 #FFFFFF
+                inactive_workspace $gray2 $gray2 #AAAAAA
         }
 }
 

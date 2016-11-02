@@ -34,13 +34,13 @@ zstyle ':prezto:load' pmodule \
   'completion' \
   'archive' \
   'fasd' \
-  'git' \
   'osx' \
   'ruby' \
   'syntax-highlighting' \
   'history-substring-search' \
   'ssh' \
-  'prompt'
+  'prompt' \
+  'git'
 
 #
 # Editor

@@ -33,10 +33,6 @@ Xft.hinting   : true
 Xft.antialias : true
 Xft.rgba      : rgb
 
-!Fading
-URxvt.fading    : 50
-URxvt.fadeColor : #29303a
-
 ! Solarized Dark
 
 #define S_base03        #002b36
@@ -169,7 +165,7 @@ URxvt*scrollBar_floating:               false
 ! URxvt*blurRadius:                     HxV
 
 ! Fade the text by the given percentage when focus is lost
-URxvt*fading:                           30
+URxvt*fading:                           10
 
 ! Fade to this colour, when fading is used (see fading:). The default colour is black
 ! URxvt*fadeColor:                        Green
@@ -256,10 +252,15 @@ URxvt*underlineColor:                   yellow
 ! URxvt*title:                          string
 
 ! Select the fonts to be used. This is a comma separated list of font names that are checked in order when trying to find glyphs for characters
-URxvt*font: xft:Source Code Pro Medium:pixelsize=14:antialias=true,xft:Menlo for Powerline:pixelsize=14:antialias=true
-URxvt*boldFont: xft:Source Code Pro Medium:bold:pixelsize=14:antialias=true,xft:Menlo for Powerline:pixelsize=14:antialias=true
-URxvt*italicFont: xft:Source Code Pro Medium:italic:pixelsize=14:antialias=true,xft:Menlo for Powerline:size=14:antialias=true
-URxvt*boldItalicFont: xft:Source Code Pro Medium:bold:italic:pixelsize=14:antialias=true,xft:Menlo for Powerline:pixelsize=14:antialias=true
+! URxvt*font: xft:Source Code Pro Medium:pixelsize=14:antialias=true,xft:Menlo for Powerline:pixelsize=14:antialias=true
+! URxvt*boldFont: xft:Source Code Pro Medium:bold:pixelsize=14:antialias=true,xft:Menlo for Powerline:pixelsize=14:antialias=true
+! URxvt*italicFont: xft:Source Code Pro Medium:italic:pixelsize=14:antialias=true,xft:Menlo for Powerline:size=14:antialias=true
+! URxvt*boldItalicFont: xft:Source Code Pro Medium:bold:italic:pixelsize=14:antialias=true,xft:Menlo for Powerline:pixelsize=14:antialias=true
+
+URxvt*font: xft:Source Code Pro Medium:pixelsize=15:antialias=true
+URxvt*boldFont: xft:Source Code Pro Medium:bold:pixelsize=15:antialias=true
+URxvt*italicFont: xft:Source Code Pro Medium:italic:pixelsize=15:antialias=true
+URxvt*boldItalicFont: xft:Source Code Pro Medium:bold:italic:pixelsize=15:antialias=true
 
 ! URxvt*font: xft:Menlo for Powerline:pixelsize=13:antialias=true
 ! URxvt*boldFont: xft:Menlo for Powerline:pixelsize=13:antialias=true
