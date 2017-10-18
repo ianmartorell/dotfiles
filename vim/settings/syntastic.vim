@@ -25,3 +25,6 @@ endfunction
 if !exists("g:syntastic_ruby_exec")
     let g:syntastic_ruby_exec = s:FindRubyExec()
 endif
+
+" Disable syntastic by default
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
